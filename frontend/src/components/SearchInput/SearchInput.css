@@ -1,0 +1,28 @@
+#searchbar {
+    position: absolute;
+    top:50px;
+    z-index:999;
+    left: 50%;
+    translate: -50% 0;
+    width:50%;
+}
+
+#searchbar input {
+    padding: 5px;
+    border:0px;
+    width:100%;
+}
+
+#searchbar .suggestion {
+    padding: 5px;
+    background-color: white;
+    font-size: 0.9rem;
+    width: 100%;
+    cursor: pointer;
+
+}
+
+#searchbar .suggestion:hover {
+    background-color: whitesmoke;
+    
+}

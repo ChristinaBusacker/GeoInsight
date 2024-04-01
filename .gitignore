@@ -1,0 +1,41 @@
+# Node.js-bezogene Ignorierungen
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+/frontend/node_modules
+/backend/node_modules
+
+# Umgebungsvariablen
+.env
+
+# Editor-Verzeichnisse und -Dateien
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Build-Ausgaben
+/dist
+/build
+/out
+
+# Temporäre Dateien
+/tmp
+/.sass-cache
+
+# Abhängigkeiten
+/bower_components
+
+# Lokale Netlify-Konfiguration
+.netlify/
+
+# Lock-Dateien
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Log-Dateien
+*.log
