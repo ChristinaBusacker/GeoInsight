@@ -19,7 +19,7 @@ export class FlickrApi extends RESTDataSource {
       lon: lon,
       format: 'json',
       nojsoncallback: 1,
-      per_page: 4,
+      per_page: 8,
       sort: 'relevance'
     });
 

@@ -52,6 +52,11 @@ export const SearchInput = () => {
         setSuggestions([])
     }
 
+    const createAdressString = (parts) => {
+        const filtered = parts.filter(part => part)
+        return filtered.join(', ')
+    }
+
 
 
     return (
@@ -59,13 +64,13 @@ export const SearchInput = () => {
             <div id="searchbar">
                 <input
                     type="text"
-                    placeholder="Search Address"
+                    placeholder="Adresse suchen"
                     onInput={(e) => setInputValue(e.target.value)}
                 />
                 {showSuggestions && (
                     <div id="suggestions">
                         {suggestions.map((suggestion, index) => (
-                            <div onClick={() => { selectSuggestion(suggestion.lat, suggestion.lng) }} className="suggestion" key={index}>{suggestion.road}{suggestion.houseNumber ? ' ' + suggestion.houseNumber : ''}, {suggestion.city}, {suggestion.country}</div>
+                            <div onClick={() => { selectSuggestion(suggestion.lat, suggestion.lng) }} className="suggestion" key={index}>{createAdressString([suggestion.road, suggestion.houseNumber, suggestion.houseNumber, suggestion.city, suggestion.country])}</div>
                         ))}
                     </div>
                 )}

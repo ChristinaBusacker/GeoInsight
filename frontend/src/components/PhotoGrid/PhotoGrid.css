@@ -1,0 +1,115 @@
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    z-index: 1000
+}
+
+#lightbox .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#lightbox .displayed {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 80vh;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+#lightbox .preview {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+#lightbox .preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#lightbox .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#lightbox .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 48px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#lightbox .nav.left {
+    left: 1%;
+}
+
+#lightbox .nav.right {
+    right: 1%;
+}
+
+#photogrid {
+    display: flex;
+    flex-basis: 50%;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin-top: 30px;
+}
+
+#photogrid img {
+    width: 45%;
+    max-height: 200px;
+    min-height: 160px;
+    object-fit: cover;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media(max-width: 560px) {
+    #lightbox .preview img {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #lightbox .displayed {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        max-width: 80vw;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+
+    #lightbox .nav {
+        top: 40%
+    }
+}

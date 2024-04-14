@@ -31,7 +31,9 @@ export class MapComponent extends Component {
     this.initGPS()
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
+      attribution: '© OpenStreetMap contributors',
+      minZoom: 3,
+
     }).addTo(this.map);
 
     document.addEventListener('location-set', (event) => {
@@ -61,6 +63,8 @@ export class MapComponent extends Component {
     } else {
       this.marker = L.marker(latlng, { icon: getLeafletMarker() }).addTo(this.map);
     }
+
+    return this.marker
   }
 
   initGPS() {
@@ -75,17 +79,14 @@ export class MapComponent extends Component {
     };
     locateButton.addTo(this.map);
 
-    this.map.on('locationfound', function (e) {
-      L.marker(e.latlng).addTo(map)
-        .bindPopup("Du bist hier").openPopup();
-    });
+    this.map.on('locationfound', (e) => {
+      setLocation(e.latlng.lat, e.latlng.lng)
+      this.setMarker(e.latlng).bindPopup("Du bist hier").openPopup();
+    })
 
-    this.map.on('locationerror', function (e) {
+    this.map.on('locationerror', (e) => {
       alert(e.message);
     });
-
-
-
   }
 
 

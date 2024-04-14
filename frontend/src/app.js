@@ -11,7 +11,6 @@ export default class App extends Component {
         <div id="app">
           <MapComponent />
           <Sidebar />
-
         </div>
       </ApolloProvider>
     );
